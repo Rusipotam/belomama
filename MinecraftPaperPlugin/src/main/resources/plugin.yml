@@ -1,0 +1,77 @@
+# QuizPlugin - Paper 1.21.8
+# Main plugin configuration file
+# Defines all commands, permissions, and plugin metadata
+
+name: QuizPlugin
+version: 1.0.0
+main: com.quizplugin.QuizPlugin
+api-version: '1.21'
+author: YourName
+description: LuckPerms-based quiz plugin with rewards and leaderboards
+website: https://yourwebsite.com
+
+# Soft dependencies - plugin will work without these but features may be limited
+softdepend:
+  - LuckPerms
+  - TAB
+
+commands:
+  quiz:
+    description: Main quiz command
+    usage: /quiz <optout|optin|points|scoreboard|broadcast|reload|setpoints|give>
+    permission: quizplugin.use
+    aliases: [q]
+
+permissions:
+  # Base permission for using the plugin
+  quizplugin.use:
+    description: Allows basic quiz commands
+    default: true
+  
+  # Player commands
+  quizplugin.optout:
+    description: Allows opting out of quizzes
+    default: true
+  
+  quizplugin.optin:
+    description: Allows opting back into quizzes
+    default: true
+  
+  quizplugin.points:
+    description: View your quiz points
+    default: true
+  
+  quizplugin.scoreboard:
+    description: View the quiz scoreboard
+    default: true
+  
+  # Admin commands
+  quizplugin.admin:
+    description: Full admin access to quiz plugin
+    default: op
+    children:
+      quizplugin.broadcast: true
+      quizplugin.reload: true
+      quizplugin.setpoints: true
+      quizplugin.setgroup: true
+      quizplugin.give: true
+  
+  quizplugin.broadcast:
+    description: Broadcast messages to all players
+    default: op
+  
+  quizplugin.reload:
+    description: Reload plugin configuration
+    default: op
+  
+  quizplugin.setpoints:
+    description: Set player points
+    default: op
+  
+  quizplugin.setgroup:
+    description: Manually set a player's quiz group
+    default: op
+  
+  quizplugin.give:
+    description: Give quiz to specific player
+    default: op

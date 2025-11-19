@@ -1,0 +1,43 @@
+# QuizPlugin Messages
+#
+# All user-facing text is configured here
+# Supports MiniMessage formatting and & color codes
+# 
+# Available placeholders:
+# %answer% - The correct answer
+# %link% - Resource link
+# %player% - Player name
+# %points% - Points value
+
+# Quiz start/send messages
+start_quiz: "<gold><bold>📝 You have received a new quiz task!</bold></gold>"
+
+# Answer feedback messages
+correct_answer: "<green><bold>✓ Correct!</bold> You earned a reward and points.</green>"
+wrong_answer: "<red><bold>✗ Incorrect.</bold> Try again!</red>"
+out_of_attempts: "<red><bold>✗ Out of attempts!</bold> The correct answer was: <white>%answer%</white></red>"
+
+# Resource link message
+link_message: "<yellow>📚 Learn more here: <white>%link%</white></yellow>"
+
+# Opt-out/opt-in messages
+optout_enabled: "<green>✓ You will no longer receive quizzes.</green>"
+optout_disabled: "<green>✓ You will now receive quizzes again!</green>"
+
+# Admin messages
+broadcast_prefix: "<gold><bold>[Quiz]</bold></gold>"
+reload_success: "<green>✓ QuizPlugin configurations reloaded successfully!</green>"
+points_set: "<green>✓ Set %player%'s points to %points%</green>"
+quiz_given: "<green>✓ Sent quiz to %player%</green>"
+
+# Error messages
+no_permission: "<red>✗ You don't have permission to use this command.</red>"
+player_not_found: "<red>✗ Player not found.</red>"
+invalid_number: "<red>✗ Invalid number.</red>"
+quiz_type_not_found: "<red>✗ Quiz type not found.</red>"
+
+# Info messages
+your_points: "<gold><bold>Your Quiz Points:</bold> <white>%points%</white></gold>"
+scoreboard_header: "<gold><bold>=== Quiz Leaderboard ===</bold></gold>"
+no_data: "<gray>No quiz data yet!</gray>"
+time_expired: "<red><bold>⏰ Time's up!</bold></red>"

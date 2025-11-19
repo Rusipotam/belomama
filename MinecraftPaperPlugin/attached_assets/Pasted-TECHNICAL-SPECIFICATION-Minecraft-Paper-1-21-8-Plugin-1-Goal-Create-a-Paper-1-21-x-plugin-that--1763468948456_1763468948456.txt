@@ -1,0 +1,199 @@
+TECHNICAL SPECIFICATION — Minecraft Paper 1.21.8 Plugin
+1. Goal
+Create a Paper 1.21.x plugin that sends individual quiz tasks to players based on their LuckPerms groups (A1–A2, B1–B2, C1–C2).
+The plugin must be fully configurable, well-commented, and easy to expand.
+---
+2. Core Logic
+2.1 Group detection
+On player join (or periodically), plugin checks the player’s LuckPerms primary group.
+The group determines:
+what quiz types the player can receive,
+difficulty weighting,
+reward tiers.
+---
+2.2 Quiz sending system
+Plugin periodically picks one random quiz type from the enabled types.
+Each quiz type has its own YAML file (quiz_type_name.yml).
+Every file contains a list of questions with:
+id
+question text
+difficulty (easy, medium, hard)
+answer type:
+"choice" (A–D options)
+"freeform" (player writes the exact answer)
+correct answer
+optional time limit t (per difficulty)
+optional max attempts try
+optional tag (grammar topic, Minecraft, history, etc.)
+optional link to resource (Telegram post / video)
+
+Example structure:
+
+- id: q01
+  question: "Wendy ...(to go) home yesterday."
+  type: freeform
+  correct: "went"
+  difficulty: medium
+  tag: "Past Simple"
+  resource: "link_here"
+  time: 20
+  attempts: 2
+
+---
+
+2.3 Player answering system
+
+Player answers by typing:
+!youranswer
+
+Plugin listens to AsyncPlayerChatEvent.
+
+Messages without ! are ignored entirely.
+
+Extract the answer after !.
+
+Validate:
+
+If choice: must match A–D.
+
+If freeform: must match the correct string (case-insensitive).
+
+If correct:
+
+Give reward item (see 2.4)
+
+Give leaderboard points (see 2.5)
+
+Send success message.
+
+
+If wrong:
+Decrease attempt counter.
+If attempts left → “try again”
+Else:
+Provide correct answer
+Provide resource link (if defined)
+---
+2.4 Reward system
+Reward depends on difficulty:
+
+Difficulty Reward item Points
+
+Easy Basic item +1
+Medium Advanced item +2
+Hard Rare item +3
+
+
+Reward item attributes:
+
+Custom name
+
+Colored description
+
+Lore showing date + question ID
+All rewards defined in rewards.yml per difficulty.
+---
+2.5 Leaderboard integration (TAB API)
+When player answers correctly, the plugin updates:
+
+local point storage (players.yml)
+
+TAB placeholder (e.g. %quizpoints%)
+
+TAB updates from internal storage on a refresh timer.
+---
+
+2.6 Player opt-out
+
+Players can disable all quizzes:
+
+Stored in player_settings.yml.
+
+Plugin never sends quizzes to those players.
+
+/quiz optout and /quiz optin.
+---
+3. File Structure
+
+/plugins/YourPlugin/
+    config.yml
+    messages.yml
+    rewards.yml
+    players.yml
+    player_settings.yml
+    /quiz_types/
+        quiz_type_1.yml
+        quiz_type_2.yml
+        quiz_type_3.yml
+        quiz_type_4.yml
+---
+4. config.yml structure
+
+quiz_interval_seconds: 300
+enabled_quiz_types:
+  - type1
+  - type2
+  - type3
+  - type4
+
+group_settings:
+  A1-A2:
+    allowed_types: [type1, type2]
+  B1-B2:
+    allowed_types: [type1, type2, type3]
+  C1-C2:
+    allowed_types: [type1, type2, type3, type4]
+
+time_limits:
+  easy: 20
+  medium: 30
+  hard: 45
+
+attempts:
+  easy: 2
+  medium: 2
+  hard: 3
+---
+5. messages.yml
+
+Contains all text, nothing hardcoded.
+
+Example:
+
+start_quiz: "You have received a new task!"
+correct_answer: "Correct! You earned a reward."
+wrong_answer: "Incorrect. Try again."
+out_of_attempts: "No attempts left. The correct answer is: %answer%"
+link_message: "Learn more here: %link%"
+optout_enabled: "You will no longer receive quizzes."
+optout_disabled: "You will now receive quizzes."
+
+
+---
+
+6. Commenting requirements
+
+Every Java class and important method must have comments explaining:
+
+what it does,
+
+why it exists,
+
+where it sends data,
+
+how it interacts with config files.
+
+
+Each quiz type file and config file must also contain header comments.
+
+---
+
+7. Commands (full list)
+
+User commands
+
+/quiz optout      — disables quizzes
+/quiz optin       — enables quizzes
+/quiz points      — shows player points
+
+Admin commands

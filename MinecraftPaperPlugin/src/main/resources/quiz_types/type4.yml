@@ -1,0 +1,100 @@
+# Quiz Type 4 - Advanced Topics & General Knowledge
+#
+# This quiz type covers advanced language skills and general knowledge
+# Suitable for C1-C2 level students only
+#
+# All questions follow the same format as type1.yml
+
+questions:
+  # Easy questions (still challenging for C1-C2)
+  - id: a01
+    question: "The capital of Australia is ___"
+    type: freeform
+    correct: "Canberra"
+    difficulty: easy
+    tag: "Geography"
+    resource: ""
+
+  - id: a02
+    question: "Who wrote 'Romeo and Juliet'?"
+    type: choice
+    options:
+      - "Charles Dickens"
+      - "William Shakespeare"
+      - "Mark Twain"
+      - "Jane Austen"
+    correct: B
+    difficulty: easy
+    tag: "Literature"
+    resource: ""
+
+  # Medium questions
+  - id: a03
+    question: "What year did World War II end?"
+    type: freeform
+    correct: "1945"
+    difficulty: medium
+    tag: "History"
+    resource: ""
+
+  - id: a04
+    question: "The phrase 'break the ice' means to ___"
+    type: choice
+    options:
+      - "Cool something down"
+      - "Start a conversation"
+      - "Destroy something"
+      - "Make ice cubes"
+    correct: B
+    difficulty: medium
+    tag: "Idioms"
+    resource: ""
+
+  - id: a05
+    question: "Complete the idiom: 'A blessing in ___'"
+    type: freeform
+    correct: "disguise"
+    difficulty: medium
+    tag: "Idioms"
+    resource: ""
+
+  # Hard questions
+  - id: a06
+    question: "What is the study of insects called?"
+    type: choice
+    options:
+      - "Entomology"
+      - "Etymology"
+      - "Ornithology"
+      - "Ichthyology"
+    correct: A
+    difficulty: hard
+    tag: "Science"
+    resource: ""
+
+  - id: a07
+    question: "Which literary device uses 'like' or 'as' to compare two things?"
+    type: choice
+    options:
+      - "Metaphor"
+      - "Simile"
+      - "Personification"
+      - "Alliteration"
+    correct: B
+    difficulty: hard
+    tag: "Literary Devices"
+    resource: ""
+
+  - id: a08
+    question: "The subjunctive mood is used to express ___"
+    type: choice
+    options:
+      - "Certainty and facts"
+      - "Questions only"
+      - "Wishes and hypotheticals"
+      - "Commands only"
+    correct: C
+    difficulty: hard
+    tag: "Advanced Grammar"
+    resource: ""
+    attempts: 3

@@ -1,0 +1,106 @@
+# Quiz Type 1 - Grammar Basics
+#
+# This quiz type focuses on basic English grammar
+# Suitable for A1-A2 level students
+#
+# Question format:
+# - id: Unique identifier
+# - question: The question text
+# - type: "choice" (A-D options) or "freeform" (text answer)
+# - options: List of choices (only for choice type)
+# - correct: Correct answer (A-D for choice, exact text for freeform)
+# - difficulty: easy, medium, or hard
+# - tag: Optional category tag
+# - resource: Optional learning resource link
+# - time: Optional time limit override (seconds)
+# - attempts: Optional max attempts override
+
+questions:
+  # Easy questions
+  - id: q01
+    question: "She ___ to school every day."
+    type: choice
+    options:
+      - "go"
+      - "goes"
+      - "going"
+      - "went"
+    correct: B
+    difficulty: easy
+    tag: "Present Simple"
+    resource: ""
+    time: 15
+    attempts: 2
+
+  - id: q02
+    question: "I ___ a student."
+    type: choice
+    options:
+      - "am"
+      - "is"
+      - "are"
+      - "be"
+    correct: A
+    difficulty: easy
+    tag: "Verb To Be"
+    resource: ""
+
+  - id: q03
+    question: "Complete: They ___ playing football."
+    type: freeform
+    correct: "are"
+    difficulty: easy
+    tag: "Present Continuous"
+    resource: ""
+
+  # Medium questions
+  - id: q04
+    question: "Yesterday, I ___ to the cinema."
+    type: choice
+    options:
+      - "go"
+      - "goes"
+      - "went"
+      - "going"
+    correct: C
+    difficulty: medium
+    tag: "Past Simple"
+    resource: ""
+    time: 25
+
+  - id: q05
+    question: "Wendy ___ (to go) home yesterday."
+    type: freeform
+    correct: "went"
+    difficulty: medium
+    tag: "Past Simple"
+    resource: ""
+
+  # Hard questions
+  - id: q06
+    question: "If I ___ rich, I would travel the world."
+    type: choice
+    options:
+      - "am"
+      - "was"
+      - "were"
+      - "be"
+    correct: C
+    difficulty: hard
+    tag: "Conditionals"
+    resource: ""
+    time: 40
+    attempts: 3
+
+  - id: q07
+    question: "She has ___ finished her homework."
+    type: choice
+    options:
+      - "yet"
+      - "already"
+      - "still"
+      - "never"
+    correct: B
+    difficulty: hard
+    tag: "Present Perfect"
+    resource: ""

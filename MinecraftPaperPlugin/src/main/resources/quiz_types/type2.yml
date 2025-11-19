@@ -1,0 +1,86 @@
+# Quiz Type 2 - Vocabulary & Word Usage
+#
+# This quiz type focuses on vocabulary and word meanings
+# Suitable for A1-B2 level students
+#
+# All questions follow the same format as type1.yml
+
+questions:
+  # Easy questions
+  - id: v01
+    question: "What does 'happy' mean?"
+    type: choice
+    options:
+      - "Sad"
+      - "Joyful"
+      - "Angry"
+      - "Tired"
+    correct: B
+    difficulty: easy
+    tag: "Adjectives"
+    resource: ""
+
+  - id: v02
+    question: "The opposite of 'big' is ___"
+    type: freeform
+    correct: "small"
+    difficulty: easy
+    tag: "Antonyms"
+    resource: ""
+
+  - id: v03
+    question: "A place where you buy bread is called a ___"
+    type: freeform
+    correct: "bakery"
+    difficulty: easy
+    tag: "Places"
+    resource: ""
+
+  # Medium questions
+  - id: v04
+    question: "Which word means 'to make something better'?"
+    type: choice
+    options:
+      - "Worsen"
+      - "Improve"
+      - "Destroy"
+      - "Ignore"
+    correct: B
+    difficulty: medium
+    tag: "Verbs"
+    resource: ""
+
+  - id: v05
+    question: "A synonym for 'intelligent' is ___"
+    type: freeform
+    correct: "smart"
+    difficulty: medium
+    tag: "Synonyms"
+    resource: ""
+
+  # Hard questions
+  - id: v06
+    question: "What does 'procrastinate' mean?"
+    type: choice
+    options:
+      - "To work immediately"
+      - "To delay doing something"
+      - "To finish early"
+      - "To plan carefully"
+    correct: B
+    difficulty: hard
+    tag: "Advanced Verbs"
+    resource: ""
+
+  - id: v07
+    question: "The word 'serendipity' refers to finding something good ___"
+    type: choice
+    options:
+      - "by accident"
+      - "by hard work"
+      - "by planning"
+      - "by asking"
+    correct: A
+    difficulty: hard
+    tag: "Advanced Vocabulary"
+    resource: ""

@@ -1,0 +1,66 @@
+# QuizPlugin Configuration
+# 
+# This file controls the core quiz distribution system
+# 
+# quiz_interval_seconds: How often (in seconds) a quiz is sent to a random eligible player
+# enabled_quiz_types: List of quiz types that can be distributed (must match filenames in /quiz_types/)
+# group_settings: Maps LuckPerms groups to allowed quiz types
+# time_limits: Default time limits per difficulty (in seconds)
+# attempts: Default maximum attempts per difficulty
+# debug_mode: Enable detailed logging for troubleshooting quiz distribution
+
+# Quiz distribution interval (in seconds)
+# Default: 300 seconds (5 minutes)
+quiz_interval_seconds: 300
+
+# Debug mode - shows detailed logs about quiz distribution
+# Set to true to see why quizzes are/aren't being sent
+# Default: false
+debug_mode: false
+
+# List of enabled quiz types
+# These must match .yml files in the /quiz_types/ folder
+enabled_quiz_types:
+  - type1
+  - type2
+  - type3
+  - type4
+
+# Group-based quiz type filtering
+# Maps LuckPerms group names to their allowed quiz types
+# Players in each group will only receive quizzes from their allowed types
+group_settings:
+  # Beginner group (A1-A2) - receives basic quizzes
+  A1-A2:
+    allowed_types:
+      - type1
+      - type2
+  
+  # Intermediate group (B1-B2) - receives basic and intermediate quizzes
+  B1-B2:
+    allowed_types:
+      - type1
+      - type2
+      - type3
+  
+  # Advanced group (C1-C2) - receives all quiz types
+  C1-C2:
+    allowed_types:
+      - type1
+      - type2
+      - type3
+      - type4
+
+# Default time limits per difficulty (in seconds)
+# Individual questions can override these in their quiz type files
+time_limits:
+  easy: 20
+  medium: 30
+  hard: 45
+
+# Default maximum attempts per difficulty
+# Individual questions can override these in their quiz type files
+attempts:
+  easy: 2
+  medium: 2
+  hard: 3

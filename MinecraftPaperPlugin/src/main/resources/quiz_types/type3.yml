@@ -1,0 +1,86 @@
+# Quiz Type 3 - Minecraft Knowledge
+#
+# This quiz type tests Minecraft game knowledge
+# Suitable for B1-C2 level students (game-based learning)
+#
+# All questions follow the same format as type1.yml
+
+questions:
+  # Easy questions
+  - id: m01
+    question: "What material do you need to craft a pickaxe handle?"
+    type: choice
+    options:
+      - "Stone"
+      - "Sticks"
+      - "Iron"
+      - "Diamond"
+    correct: B
+    difficulty: easy
+    tag: "Crafting"
+    resource: ""
+
+  - id: m02
+    question: "How many blocks of wool do you need to craft a bed?"
+    type: freeform
+    correct: "3"
+    difficulty: easy
+    tag: "Crafting"
+    resource: ""
+
+  - id: m03
+    question: "What dimension do you access with a Nether Portal?"
+    type: freeform
+    correct: "nether"
+    difficulty: easy
+    tag: "Dimensions"
+    resource: ""
+
+  # Medium questions
+  - id: m04
+    question: "What do you need to brew a potion in Minecraft?"
+    type: choice
+    options:
+      - "Furnace"
+      - "Crafting Table"
+      - "Brewing Stand"
+      - "Anvil"
+    correct: C
+    difficulty: medium
+    tag: "Brewing"
+    resource: ""
+
+  - id: m05
+    question: "How many eyes of ender are needed to activate an End Portal?"
+    type: freeform
+    correct: "12"
+    difficulty: medium
+    tag: "The End"
+    resource: ""
+
+  # Hard questions
+  - id: m06
+    question: "What is the blast resistance of obsidian?"
+    type: choice
+    options:
+      - "600"
+      - "1200"
+      - "1800"
+      - "2400"
+    correct: B
+    difficulty: hard
+    tag: "Block Properties"
+    resource: ""
+
+  - id: m07
+    question: "Which enchantment allows you to walk on water?"
+    type: choice
+    options:
+      - "Depth Strider"
+      - "Frost Walker"
+      - "Aqua Affinity"
+      - "Respiration"
+    correct: B
+    difficulty: hard
+    tag: "Enchantments"
+    resource: ""

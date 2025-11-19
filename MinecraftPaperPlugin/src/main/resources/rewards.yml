@@ -1,0 +1,91 @@
+# QuizPlugin Rewards Configuration
+#
+# This file defines rewards for each difficulty level
+# Each reward includes:
+# - material: The item type (Minecraft material name)
+# - name: Display name (supports & color codes)
+# - lore: List of lore lines (supports & color codes)
+# - points: Quiz points awarded
+#
+# Additional lore (date + question ID) is automatically added by the plugin
+
+# Easy difficulty reward
+easy:
+  material: IRON_INGOT
+  name: "&a&lQuiz Reward &7(Easy)"
+  lore:
+    - "&7You answered an easy question"
+    - "&7correctly! Keep practicing!"
+    - ""
+    - "&a+1 Quiz Point"
+  points: 1
+
+# Medium difficulty reward
+medium:
+  material: GOLD_INGOT
+  name: "&e&lQuiz Reward &7(Medium)"
+  lore:
+    - "&7You answered a medium difficulty"
+    - "&7question correctly! Great job!"
+    - ""
+    - "&e+2 Quiz Points"
+  points: 2
+
+# Hard difficulty reward
+hard:
+  material: DIAMOND
+  name: "&b&lQuiz Reward &7(Hard)"
+  lore:
+    - "&7You answered a hard question"
+    - "&7correctly! Excellent work!"
+    - ""
+    - "&b+3 Quiz Points"
+  points: 3
+
+# Blank reward template 1
+# Customize this for special events or custom difficulty levels
+custom_reward_1:
+  material: EMERALD
+  name: "&a&lCustom Reward #1"
+  lore:
+    - "&7Customize this reward in"
+    - "&7rewards.yml for your needs"
+    - ""
+    - "&a+5 Quiz Points"
+  points: 5
+
+# Blank reward template 2
+# Customize this for special events or custom difficulty levels
+custom_reward_2:
+  material: NETHER_STAR
+  name: "&d&lCustom Reward #2"
+  lore:
+    - "&7Customize this reward in"
+    - "&7rewards.yml for your needs"
+    - ""
+    - "&d+10 Quiz Points"
+  points: 10
+
+# Blank reward template 3
+# Perfect for seasonal events or special achievements
+custom_reward_3:
+  material: GOLDEN_APPLE
+  name: "&6&lCustom Reward #3"
+  lore:
+    - "&7Use this for special occasions"
+    - "&7or unique quiz categories"
+    - ""
+    - "&6+7 Quiz Points"
+  points: 7
+
+# Blank reward template 4
+# Reserved for future use or VIP players
+custom_reward_4:
+  material: ENCHANTED_GOLDEN_APPLE
+  name: "&c&lCustom Reward #4"
+  lore:
+    - "&7Reserved for premium content"
+    - "&7or exclusive quiz types"
+    - ""
+    - "&c+15 Quiz Points"
+  points: 15
